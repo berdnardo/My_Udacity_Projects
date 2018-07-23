@@ -242,17 +242,18 @@ time_trip.sort()
 #função utilizada para auxiliar o calculo da media e mediana.
 total_duration = 0
 total_trips = 0
-count_middle = len(trip_duration_list)
-middle = int(count_middle/2)
 for count_time in time_trip:
     if count_time:
         total_duration += count_time
         total_trips += 1
+median_index_1= total_trips/2
+median_index_2= total_trips/2+1
+main_index= int((median_index_1+median_index_2)/2)
 #resultado das variaveis
 min_trip = time_trip[0]
 max_trip = time_trip[-1]
 mean_trip = round(total_duration/total_trips)
-median_trip = time_trip[middle] #fazer (xn/2+xn/2+1)/2 calculo base da mediana.
+median_trip = time_trip[main_index] #fazer (xn/2+xn/2+1)/2 calculo base da mediana.
 
 
 print("\nTAREFA 9: Imprimindo o mínimo, máximo, média, e mediana")
