@@ -1,5 +1,5 @@
 # coding: utf-8
-#b890058c15296d4d6530f810482475e1e3b5add8 git_token
+
 # Começando com os imports
 import csv
 import matplotlib.pyplot as plt
@@ -56,11 +56,12 @@ input("Aperte Enter para continuar...")
 # Dica: Você pode usar um for para iterar sobre as amostras, pegar a feature pelo seu índice, e dar append para uma lista
 
 def column_to_list(data, index):
-"""Função de criação de lista iterando uma coluna de uma lista principal
+    """Função de criação de lista iterando uma coluna de uma lista principal
     Parametros de entrada:
     Parametro 1: lista a ser iterada para aquisição dos itens para a criação de uma nova lista.
     Parametro 2: index que corresponde ao item da lista principal a ser criado uma nova lista.
-    A função retorna uma lista de um item especifico de uma lista principal."""
+    A função retorna uma lista de um item especifico de uma lista principal.
+    """
     column_list = []
     data = data_list[1:]
     for column in data:
@@ -105,18 +106,19 @@ input("Aperte Enter para continuar...")
 # Isso deveria retornar uma lista com [count_male, count_female] (exemplo: [10, 15] significa 10 Masculinos, 15 Femininos)
 
 def count_gender(data_list):
-"""Função que faz a contegem de quantas str 'Male' e 'Female' existem dentro da lista data_list
-Parametro de entrada:
-   parametro fixo lista data_list
-    Retorna duas variaveis male e female com o total da contagem da str 'Male' 'Female'."""
-male = 0
-female = 0
-for gender in data_list:
-    if 'Male' in gender:
+    """Função que faz a contegem de quantas str 'Male' e 'Female' existem dentro da lista data_list
+        Parametro de entrada:
+        parametro fixo lista data_list
+        Retorna duas variaveis male e female com o total da contagem da str 'Male' 'Female'.
+        """
+    male = 0
+    female = 0
+    for gender in data_list:
+        if 'Male' in gender:
             male += 1
-    elif 'Female' in gender:
+        elif 'Female' in gender:
             female += 1
-return [male, female]
+    return [male, female]
 
 
 print("\nTAREFA 5: Imprimindo o resultado de count_gender")
@@ -135,11 +137,11 @@ input("Aperte Enter para continuar...")
 # Esperamos ver "Masculino", "Feminino", ou "Igual" como resposta.
 
 def most_popular_gender(data_list):
-"""Função que faz a contagem dos dos generos da lista data_list e retorna a maior ocorrencia
-Parametro:
-   parametro fixo data_list
-Retrona valor como str da maior ocorrencia, no caso de igualdade retorna str 'Igual'"""
-
+    """Função que faz a contagem dos dos generos da lista data_list e retorna a maior ocorrencia
+        Parametro:
+            parametro fixo data_list
+    Retorna valor como str da maior ocorrencia, no caso de igualdade retorna str 'Igual'
+    """
     answer = ""
     for data in data_list:
         male = 0
@@ -183,10 +185,11 @@ input("Aperte Enter para continuar...")
 print("\nTAREFA 7: Verifique o gráfico!")
 
 def count_user_types(data_list):
-"""Função que faz a contagem dos tipos de usuarios da lista data_list
-Parametro:
-    parametro fixo data_list
-Retorna valor como int do total de tipos de usuarios"""
+    """Função que faz a contagem dos tipos de usuarios da lista data_list
+        Parametro:
+            parametro fixo data_list
+        Retorna valor como int do total de tipos de usuarios.
+    """
     subscriber = 0
     customer = 0
     for data in data_list:
@@ -249,7 +252,7 @@ for count_time in time_trip:
 min_trip = time_trip[0]
 max_trip = time_trip[-1]
 mean_trip = round(total_duration/total_trips)
-median_trip = time_trip[middle]
+median_trip = time_trip[middle] #fazer (xn/2+xn/2+1)/2 calculo base da mediana.
 
 
 print("\nTAREFA 9: Imprimindo o mínimo, máximo, média, e mediana")
@@ -280,15 +283,13 @@ input("Aperte Enter para continuar...")
 # TAREFA 11
 # Volte e tenha certeza que você documenteou suas funções. Explique os parâmetros de entrada, a saída, e o que a função faz. Exemplo:
 # def new_function(param1: int, param2: str) -> list:
-"""   
-            Função de exemplo com anotações.
+"""
+    Função de exemplo com anotações.
             Argumentos:
             param1: O primeiro parâmetro.
             param2: O segundo parâmetro.
             Retorna:
             Uma lista de valores x.
-
-
 """
 
 input("Aperte Enter para continuar...")
@@ -301,14 +302,13 @@ answer = "yes"
 
 
 def count_items(column_list):
-"""
-Função que gera duas listas uma com os tipos de dados sem a repetição dos itens e outra que conta o total de itens
-dentro dessa mesma lista.
-Parametro:
-usa como parametro outra função column_list para pegar uma coluna especifica dentro de uma lista
-Retorna lista item_types com o itens da lista principal sem repetição e a lista count_items com o total de itens detro
-da lista principal.
-"""
+    """Função que gera duas listas uma com os tipos de dados sem a repetição dos itens e outra que conta o total de itens
+        dentro dessa mesma lista.
+        Parametro:
+            usa como parametro outra função column_list para pegar uma coluna especifica dentro de uma lista
+        Retorna lista item_types com o itens da lista principal sem repetição e a lista count_items com o total de itens
+        dentro da lista principal.
+    """
     things = 0
     item_types = set(column_list)
     count_items=[]
